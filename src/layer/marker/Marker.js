@@ -85,7 +85,8 @@ L.Marker.include({
 
     _initInteraction: function() {
         var ret = markerProto._initInteraction.call(this);
-        if (this.dragging && this._map && this._map._rotate) {
+        // Removed global changes related to dragging L.Marker objects
+        /*  if (this.dragging && this._map && this._map._rotate) {
             // L.Handler.MarkerDrag is used internally by L.Marker to make the markers draggable
             markerDragProto = markerDragProto || Object.getPrototypeOf(this.dragging);
             this.dragging._onDragStart = MarkerDrag._onDragStart.bind(this.dragging);
@@ -93,7 +94,7 @@ L.Marker.include({
             this.dragging._onDragEnd = MarkerDrag._onDragEnd.bind(this.dragging);
             this.dragging.disable();
             this.dragging.enable();
-        }
+        } */
         return ret;
     },
 
